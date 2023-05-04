@@ -11,4 +11,5 @@ router.post("/", userController.createUser);
 
 //xóa user
 router.delete("/:_id", userController.deleteUser);
+
 export default router;

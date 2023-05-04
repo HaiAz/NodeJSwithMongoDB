@@ -8,6 +8,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//tạo cổng kết nối
 async function main() {
     try {
         await mongoose.connect("mongodb://127.0.0.1:27017/nodejs");
@@ -19,8 +20,10 @@ async function main() {
 
 main();
 
+//tạo đường dẫn cho user
 app.use("/user", userRouter);
 
+//test server
 app.get("/", (req, res) => {
     const user = userModel.find();
     return res.send("123");
